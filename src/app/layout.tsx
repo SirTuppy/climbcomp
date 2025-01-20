@@ -1,8 +1,8 @@
-import { Navbar } from '../components/shared/Navbar';
-import { AuthProvider } from '../components/providers/AuthProvider';
-import { ToastProvider } from '../components/providers/ToastProvider';
-
-import './globals.css';
+// src/app/layout.tsx
+import { AuthProvider } from '../components/providers/AuthProvider'
+import { ToastProvider } from '../components/providers/ToastProvider'
+import { QueryProvider } from '../components/providers/QueryProvider'
+import './globals.css'
 
 export default function RootLayout({
   children,
@@ -13,11 +13,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AuthProvider>
-          <Navbar />
-          <main>
-            {children}
-          </main>
-          <ToastProvider />
+          <QueryProvider>
+            <ToastProvider>
+              {children}
+            </ToastProvider>
+          </QueryProvider>
         </AuthProvider>
       </body>
     </html>

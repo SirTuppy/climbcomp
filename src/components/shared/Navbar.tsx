@@ -10,7 +10,7 @@ export function Navbar() {
   return (
     <nav className="bg-white border-b">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" prefetch={false} className="text-xl font-bold">
           ClimbComp
         </Link>
         
@@ -26,7 +26,7 @@ export function Navbar() {
               </Button>
             </>
           ) : (
-            <Link href="/auth">
+            <Link href="/auth" prefetch={false}>
               <Button>Login</Button>
             </Link>
           )}

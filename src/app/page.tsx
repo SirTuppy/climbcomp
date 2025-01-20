@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '../components/ui/button';
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   return (
@@ -13,12 +14,12 @@ export default function HomePage() {
           Simple, flexible, and powerful.
         </p>
         <div className="flex gap-4 justify-center">
-          <Link href="/dashboard">
+          <Link href="/dashboard" prefetch={false}>
             <Button size="lg">
               Get Started
             </Button>
           </Link>
-          <Link href="https://github.com/SirTuppy/climbcomp" target="_blank">
+          <Link href="https://github.com/SirTuppy/climbcomp" target="_blank" prefetch={false}>
             <Button variant="outline" size="lg">
               View on GitHub
             </Button>
